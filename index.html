@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MecaConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header id="navbar"></header>
+
+    <!-- Main content container -->
+    <main id="content"></main>
+
+    <!-- Templates for dynamic views -->
+    <template id="home-template">
+        <section class="home">
+            <h1>Bienvenue sur MecaConnect</h1>
+            <p>
+                MecaConnect est une plateforme qui met en relation les producteurs agricoles et les détenteurs de
+                machines low‑tech au Sénégal. Réduisez vos coûts d'accès aux équipements, optimisez leur utilisation
+                et soutenez l'économie rurale grâce à notre service simple et accessible.
+            </p>
+            <div class="actions">
+                <button id="btn-register-producer">Je suis producteur</button>
+                <button id="btn-register-holder">Je possède des machines</button>
+            </div>
+        </section>
+    </template>
+
+    <template id="register-producer-template">
+        <section class="register">
+            <h2>Inscription Producteur</h2>
+            <form id="form-register-producer">
+                <label>Nom ou structure
+                    <input type="text" id="producer-name" required>
+                </label>
+                <label>Région / Commune
+                    <input type="text" id="producer-location" required>
+                </label>
+                <label>Type d’activité
+                    <select id="producer-activity" required>
+                        <option value="agriculture">Agriculture</option>
+                        <option value="irrigation">Irrigation</option>
+                        <option value="transformation">Transformation alimentaire</option>
+                    </select>
+                </label>
+                <label>Superficie exploitée (en ha)
+                    <input type="number" id="producer-area" min="0" required>
+                </label>
+                <label>Cultures principales
+                    <input type="text" id="producer-crops" required>
+                </label>
+                <label>Numéro de téléphone
+                    <input type="tel" id="producer-phone" required>
+                </label>
+                <button type="submit">S'inscrire</button>
+                <button type="button" id="cancel-producer">Annuler</button>
+            </form>
+        </section>
+    </template>
+
+    <template id="register-holder-template">
+        <section class="register">
+            <h2>Inscription Détenteur</h2>
+            <form id="form-register-holder">
+                <label>Nom ou structure
+                    <input type="text" id="holder-name" required>
+                </label>
+                <label>Région / Commune
+                    <input type="text" id="holder-location" required>
+                </label>
+                <label>Numéro de téléphone
+                    <input type="tel" id="holder-phone" required>
+                </label>
+                <button type="submit">S'inscrire</button>
+                <button type="button" id="cancel-holder">Annuler</button>
+            </form>
+        </section>
+    </template>
+
+    <template id="catalogue-template">
+        <section class="catalogue">
+            <h2>Catalogue des machines</h2>
+            <div class="filters">
+                <input type="text" id="search-query" placeholder="Rechercher une machine...">
+                <select id="filter-type">
+                    <option value="">Tous types</option>
+                    <option value="motopompe">Motopompe</option>
+                    <option value="décortiqueuse">Décortiqueuse</option>
+                    <option value="moulin">Moulin</option>
+                    <option value="semoir">Semoir</option>
+                </select>
+            </div>
+            <div id="machine-list" class="machine-list"></div>
+        </section>
+    </template>
+
+    <template id="machine-detail-template">
+        <section class="machine-detail"></section>
+    </template>
+
+    <template id="rent-summary-template">
+        <section class="rent-summary"></section>
+    </template>
+
+    <template id="my-rentals-template">
+        <section class="my-rentals">
+            <h2>Mes locations</h2>
+            <div id="rentals-list"></div>
+        </section>
+    </template>
+
+    <template id="dashboard-template">
+        <section class="dashboard">
+            <h2>Tableau de bord</h2>
+            <div class="stats" id="dashboard-stats"></div>
+        </section>
+    </template>
+
+    <template id="add-machine-template">
+        <section class="add-machine">
+            <h2>Ajouter une machine</h2>
+            <form id="form-add-machine">
+                <label>Nom de la machine
+                    <input type="text" id="machine-name" required>
+                </label>
+                <label>Type de machine
+                    <select id="machine-type" required>
+                        <option value="motopompe">Motopompe</option>
+                        <option value="décortiqueuse">Décortiqueuse</option>
+                        <option value="moulin">Moulin</option>
+                        <option value="semoir">Semoir</option>
+                    </select>
+                </label>
+                <label>Région / Commune
+                    <input type="text" id="machine-location" required>
+                </label>
+                <label>Capacité
+                    <input type="text" id="machine-capacity" required>
+                </label>
+                <label>Consommation (énergie/carburant)
+                    <input type="text" id="machine-consumption" required>
+                </label>
+                <label>Tarif par heure (FCFA)
+                    <input type="number" id="machine-price-hour" min="0" required>
+                </label>
+                <label>Tarif par jour (FCFA)
+                    <input type="number" id="machine-price-day" min="0" required>
+                </label>
+                <button type="submit">Ajouter</button>
+            </form>
+        </section>
+    </template>
+
+    <template id="my-machines-template">
+        <section class="my-machines">
+            <h2>Mes machines</h2>
+            <div id="my-machines-list"></div>
+        </section>
+    </template>
+
+    <template id="maintenance-template">
+        <section class="maintenance">
+            <h2>Maintenance</h2>
+            <p>Fonctionnalité en cours de développement. Vous pourrez bientôt signaler une panne et planifier une maintenance.</p>
+        </section>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
