@@ -101,10 +101,11 @@
      * Cela permet d'afficher des illustrations dans le catalogue et les détails.
      */
     const TYPE_IMAGES = {
-        'motopompe': 'assets/motopompe.png',
-        'décortiqueuse': 'assets/decortiqueuse.png',
-        'moulin': 'assets/moulin.png',
-        'semoir': 'assets/semoir.png'
+        // Images are stored in the root of the repository for easier hosting via GitHub Pages
+        'motopompe': 'motopompe.png',
+        'décortiqueuse': 'decortiqueuse.png',
+        'moulin': 'moulin.png',
+        'semoir': 'semoir.png'
     };
 
     /* Sauvegarde des données dans localStorage */
